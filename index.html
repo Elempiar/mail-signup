@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="nl" class="h-full">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De Kattenpost 🐾 | Verboeket</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Inter Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'media', // Respects OS prefers-color-scheme
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            accent: {
+              DEFAULT: '#8B78E6',
+              hover: '#7761E0',
+              glow: 'rgba(139, 120, 230, 0.25)'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Dynamic background with radial glows for light and dark modes */
+    body {
+      background-color: #F8F6F0;
+      background-image: 
+        radial-gradient(at 10% 20%, rgba(232, 229, 244, 0.7) 0px, transparent 50%),
+        radial-gradient(at 90% 80%, rgba(253, 226, 228, 0.6) 0px, transparent 50%);
+      background-attachment: fixed;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background-color: #0F172A;
+        background-image: 
+          radial-gradient(at 15% 15%, rgba(139, 120, 230, 0.12) 0px, transparent 45%),
+          radial-gradient(at 85% 85%, rgba(30, 41, 59, 0.8) 0px, transparent 50%);
+      }
+    }
+  </style>
+</head>
+<body class="min-h-full font-sans text-slate-800 dark:text-slate-100 flex items-center justify-center p-4 transition-colors duration-300">
+
+  <!-- Centered Card / Modal -->
+  <main class="w-full max-w-md bg-white dark:bg-slate-900/90 dark:backdrop-blur-md rounded-3xl p-8 sm:p-10 shadow-xl shadow-slate-200/50 dark:shadow-none border border-slate-100 dark:border-slate-800 transition-all duration-300">
+    
+    <!-- Header Badge / Emoji -->
+    <div class="text-center mb-6">
+      <div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-50 dark:bg-slate-800/80 text-3xl mb-4 shadow-sm border border-indigo-100/50 dark:border-slate-700/50 transform hover:scale-105 transition-transform duration-200">
+        🐾
+      </div>
+      <h1 class="text-2xl sm:text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">
+        De Kattenpost
+      </h1>
+      <p class="text-sm sm:text-base text-slate-500 dark:text-slate-400 leading-relaxed">
+        Ontvang af en toe een schattige kattenfoto en een korte update rechtstreeks in je inbox.
+      </p>
+    </div>
+
+    <!-- Buttondown Subscription Form -->
+    <form
+        action="https://buttondown.com/api/emails/embed-subscribe/elempiar"
+        method="post"
+        class="embeddable-buttondown-form"
+    >
+        <label for="bd-email">Enter your email</label>
+        <input type="email" name="email" id="bd-email" />
+        <input type="submit" value="Subscribe" />
+        <p>
+            <a href="https://buttondown.com/refer/elempiar" target="_blank">
+            Powered by Buttondown.
+            </a>
+        </p>
+    </form>
+
+    <!-- Footer Credit -->
+    <footer class="mt-8 pt-6 border-t border-slate-100 dark:border-slate-800 text-center">
+      <span class="text-xs text-slate-400 dark:text-slate-500">
+        Een projectje van <a href="https://verboeket.dev" class="text-accent hover:underline font-medium dark:text-indigo-400">verboeket.dev</a>
+      </span>
+    </footer>
+
+  </main>
+
+</body>
+</html>
